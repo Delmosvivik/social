@@ -2,7 +2,7 @@
 session_start();
 require_once '../application/db.php'; // Подключаем файл db.php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-// Подключение к базе данных уже установлено в файле db.php, поэтому нет необходимости создавать новое соединение
+// Подключение к базе данных уже установлено в файле db.php, поэтому нет необходимости создавать нов
 global $conn; // Используем глобальную переменную $conn из файла db.php
 // Проверяем, установлена ли сессия с идентификатором пользователя
 if (isset($_SESSION['id'])) {
@@ -11,20 +11,16 @@ if (isset($_SESSION['id'])) {
  echo "Error: Unauthorized access";
 exit;
  }
-if (($_SESSION['admin']) == 1) {
- $senderId = 0;
- }
 // Получаем идентификатор получателя сообщения из POST-запроса
  $receiverId = $_POST['receiver_id'];
 // Подготавливаем SQL запрос для выборки сообщений
  $stmt = $conn->prepare("SELECT messages.message_text, messages.timestamp, sender.us_name AS sender_name
-FROM messages
-JOIN users AS sender ON messages.sender_id = sender.id
-WHERE
-(messages.sender_id = ? AND messages.receiver_id = ?) OR
-(messages.sender_id = ? AND messages.receiver_id = ?)
-ORDER BY messages.timestamp");
-
+                        FROM messages
+                        JOIN users AS sender ON messages.sender_id = sender.id
+                        WHERE
+                        (messages.sender_id = ? AND messages.receiver_id = ?) OR
+                        (messages.sender_id = ? AND messages.receiver_id = ?)
+                        ORDER BY messages.timestamp");
 // Проверяем, была ли ошибка при подготовке запроса
 if (!$stmt) {
  echo "Error in SQL query: " . $conn->error;

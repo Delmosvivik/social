@@ -3,7 +3,7 @@
 <nav class="nav"> 
  <ul class="pt-5">
  <li><a href="http://localhost/Social/">Главная</a></li>
- <!--Добавляем PHP код для для определения ссылки на страницу "Личный кабинет" -->
+ <!--Добавляем PHP код для для определения ссылки на страницу "Личный кабинет и чат" -->
  <?php
 if (isset($_SESSION['id'])) {
     echo '<li><a href="http://localhost/Social/profile/accaunt.php">Личный кабинет</a></li>';

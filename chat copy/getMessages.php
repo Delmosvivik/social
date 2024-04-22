@@ -11,6 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Error: Unauthorized access";
         exit;
     }
+
+    if (($_SESSION['admin']) == 1) {
+        $senderId = 0;
+    }
     // Получаем идентификатор получателя сообщения из POST-запроса
     $receiverId = $_POST['receiver_id'];
     // Подготавливаем SQL запрос для выборки сообщений

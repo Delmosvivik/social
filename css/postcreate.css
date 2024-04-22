@@ -1,6 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #0978f7;
+    color: #007bff;
     background-color: #464c5e;
     overflow-y: scroll;
     /* Добавляем вертикальную прокрутку */
@@ -8,6 +8,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    font-size: 21px;
 }
 
 header {
@@ -17,13 +18,14 @@ header {
 header h1 {
     margin: 0;
     font-size: 56px;
-    color: #0978f7;
-    -webkit-text-stroke: 2px #0978f7;
+    color: #0095ff;
+    -webkit-text-stroke: 2px blueviolet;
     -webkit-text-fill-color: transparent;
 }
 
 button {
-    background-color: #0978f7;
+    background-color: #066496;
+    /* Чуть темнее желтого */
     border: none;
     color: #353746;
     padding: 10px 20px;
@@ -38,34 +40,32 @@ button {
 }
 
 button:hover {
-    background-color: #0978f7;
+    background-color: blueviolet;
 }
 
-
-#edit-profile-form {
+/* Стили для формы создания поста */
+form {
     max-width: 600px;
-
+    /* Увеличиваем максимальную ширину формы */
     margin: 20px auto;
     padding: 20px;
     background-color: #f4f7f8;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     opacity: 0;
-
+    /* Начальная непрозрачность */
     animation: fadeIn 0.5s ease-in-out forwards;
 }
 
-#edit-profile-form label {
+form label {
     display: block;
     margin-bottom: 10px;
     color: #333;
     font-weight: bold;
 }
 
-#edit-profile-form input[type="text"],
-#edit-profile-form input[type="email"],
-#edit-profile-form input[type="password"],
-#edit-profile-form textarea {
+form input[type="text"],
+form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -73,17 +73,18 @@ button:hover {
     border-radius: 5px;
     box-sizing: border-box;
     opacity: 0;
-
+    /* Начальная непрозрачность */
     animation: fadeInUp 0.5s ease forwards;
 }
 
-#edit-profile-form textarea {
+form textarea {
     height: 100px;
-
+    /* Увеличиваем высоту поля для содержания */
 }
 
-#edit-profile-form button[type="submit"] {
-    background: #0384fc;
+form button[type="submit"] {
+    background: blueviolet;
+    /* Чуть темнее желтого */
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -91,13 +92,40 @@ button:hover {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     opacity: 0;
+    /* Начальная непрозрачность */
     animation: fadeInUp 0.5s ease forwards;
 }
 
-#edit-profile-form button[type="submit"]:hover {
-    background: #0357ff;
+form button[type="submit"]:hover {
+    background: blueviolet;
 }
 
+/* Стили для поля выбора файла */
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px dashed #062cd6;
+    /* Желтая пунктирная рамка */
+    border-radius: 5px;
+    box-sizing: border-box;
+    opacity: 0;
+    /* Начальная непрозрачность */
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+form input[type="file"]:focus {
+    outline: none;
+    border-color: blueviolet;
+    /* Желтый цвет при фокусе */
+}
+
+form input[type="file"]:hover {
+    border-color: blueviolet;
+    /* Желтый цвет при наведении */
+}
+
+/* Анимация */
 @keyframes fadeIn {
     from {
         opacity: 0;

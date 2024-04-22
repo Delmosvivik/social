@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1343f1;
+    background-color: #263361;
     color: #eeeeec;
 }
 
@@ -18,7 +18,7 @@ body {
 
 #user-list {
     width: 200px;
-    background-color: #1343f1;
+    background-color: #464c5e;
     color: #eeeeec;
     border-right: 1px solid #ccc;
 }
@@ -32,13 +32,13 @@ body {
 #all-users li {
     cursor: pointer;
     padding: 10px;
-    border-bottom: 1px solid #1343f1;
+    border-bottom: 1px solid #575d72;
     transition: background-color 0.3s ease;
     /* Новая анимация при наведении */
 }
 
 #all-users li.selected {
-    background-color: #1343f1;
+    background-color: #575d72;
     transition: background-color 0.3s ease;
     /* Новая анимация при выборе пользователя */
 }
@@ -58,8 +58,7 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #1343f1;
-    /* Цвет фона блока ввода сообщений */
+    background-color: #344065;
     padding: 10px;
     box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
     margin-top: auto;
@@ -74,35 +73,26 @@ body {
     resize: none;
     box-sizing: border-box;
     height: 40px;
-    /* Начальная высота, можно установить любое значение */
     border: 1px solid #eee;
-    /* Цвет обводки поля ввода сообщений */
     border-radius: 5px;
-    /* Закругление углов поля ввода сообщений */
     padding: 5px;
-    /* Внутренний отступ поля ввода сообщений */
 }
 
 #send-button {
     margin-right: 20px;
     /* Отступ слева для кнопки отправки */
-    background-color: #9900ff;
-    /* Цвет фона кнопки отправки */
-    color: #1343f1;
-    /* Цвет текста кнопки отправки */
+    background-color: #0633ba;
+    color: #ffffff;
     border: none;
-    /* Убираем границу кнопки */
     border-radius: 5px;
-    /* Закругление углов кнопки отправки */
     padding: 8px 15px;
-    /* Внутренний отступ кнопки отправки */
     cursor: pointer;
     transition: background-color 0.3s;
     /* Анимация при изменении цвета фона */
 }
 
 #send-button:hover {
-    background-color: #9900ff;
+    background-color: #0c056b;
     /* Измененный цвет фона кнопки отправки при наведении */
 }
 
@@ -123,27 +113,24 @@ body {
 
 /* Новая анимация при наведении */
 #all-users li:hover {
-    background-color: #1343f1;
+    background-color: #2e3f6f;
 }
 
 #chat-messages div {
     margin: 10px;
     padding: 10px;
     font-weight: bold;
-    border: 1px solid #1343f1;
-    /* Цвет обводки */
+    border: 1px solid #0d144b;
     border-radius: 5px;
-    /* Закругление углов */
     background-color: #f0f0f0;
-    /* Цвет фона сообщения */
     transition: background-color 0.3s;
     /* Анимация при изменении цвета фона */
-    color: #1343f1;
-    /* Цвет текста сообщения */
+    color: #ffffff;
+
 }
 
 #chat-messages div:hover {
-    background-color: #C0C0C0;
+    background-color: #091c62;
     /* Измененный цвет фона при наведении */
 }
 
@@ -173,6 +160,7 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding: 5px;
+    opacity: 0;
     z-index: 2;
     transition: opacity 0.3s ease-in-out;
     /* Анимация плавного появления/исчезания */

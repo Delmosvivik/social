@@ -1,6 +1,6 @@
-<?php
-    include("application/users.php");
-    ?>
+<php?
+include("application/users.php" );
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,35 +12,38 @@
 </head>
 <body>
 <?php
-    include ("menu.php");
-    ?>
-    <div class="container">
-        <form action="registration.php" class="reg" method="post">
-            <h3>Регистрация</h3>
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">ФИО</label>
-                <input name='login' type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите ваше ФИО">
-            </div>
-            <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
-            <input name='email' type="email" class="form-control" id="exampleInputEmail1" aria-decribedby="emailHelp">
-            <div id="emailHelp" class="form-text">Мы никогда и не кому не передадим вашу почту.</div>
-            </div>
-            <div class="mb-3">
-            <label for="" class="form-label">Возраст</label>
-            <input name='age' type="text" class="form-control" id="formGroupExampleInput">
-           </div>
-           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Пароль</label>
-            <input name='pass-first' type="password" class="form-control" id="exampleInputPassword1">
-           </div>
-           <div class="mb-3">
-            <label for="exampleInputPassword2" class="form-label">Введите пароль повторно</label>
-            <input name='pass-second' type="password" class="form-control" id="exampleInputPassword2">
-           </div>
-           <button name='button-reg' type="submit" class="btn btn-primary">Отправить</button>
-             <a href="auth.php">Авторизоваться</a>
-             <div class="form-text1">Если еще не зарегистрированы, нажмите кнопку выше</div>
+  include("menu.php");
+  ?> 
+  <div class="container">
+    <form action="auth.php" class="reg" method="post">
+     <h3>Регистрация</h3>
+     <div class="mb-3">
+        <label for="" class="form-label">ФИО</label>
+        <input type="text" name="login" class="form-control" id="FormGroupExampleInput" placeholder="Видите ваше ФИО">
+     </div>
+     <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Адрес электроной почты</label>
+        <input type="email" name="email" class="form-control" id="exampleInputPassword1" aria-describedby="EmailHelp" >
+        <div class="form-text" id="EmailHelp">Мы никогда и никому не дадим вашу почту</div>
+     </div>
+     <div class="mb-3">
+        <label for="" class="form-label">Возраст</label>
+        <input type="text" name="age" class="form-control" id="FormGroupExampleInput" aria-describedby="EmailHelp" >
+     </div>
+     <div class="mb-3">
+       <label for="exampleInputPassword1" class="form-label">Пароль</label>
+        <input type="password" name="pass-first" class="form-control" id="FormGroupExamplePassword1" >
+     </div>
+     <div class="mb-3">
+       <label for="exampleInputPassword2" class="form-label">Введите пароль повторно</label>
+        <input type="password" name="pass-first" class="form-control" id="FormGroupExamplePassword2" >
+     </div>
+      <button name="button-reg" type="submit" class="btn btn-primary" > Отправить</button>
+      <a href="auth.php">Авторизоваться</a>
+      <div class="form-text1" >Если вы уже зарегистрированы, нажмите на кнопку выше</div>
     </div>
+  </div> 
+    </form>
+  </div> 
 </body>
 </html>

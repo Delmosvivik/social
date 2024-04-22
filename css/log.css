@@ -1,7 +1,8 @@
 body {
-    font: 300 15/1.7 'Montserrat', sans-serif;
-    color: gray;
-    background: #9900ff;
+    font: 300 15px/1.7 'Montserrat', sans-serif;
+    color: blue;
+    background-color: rgb(21, 21, 98);
+    overflow: hidden;
     height: 100vh;
     width: 100%;
 }
@@ -17,16 +18,17 @@ body {
     max-width: 500px;
     width: 100%;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 2px solid #C00000;
+    background-color: azure;
+    border: 2px solid blue;
     border-radius: 5px;
     animation: fade-in 0.5s ease-in-out;
 }
 
 @keyframes fade-in {
-    from {
+    form {
         opacity: 0;
         transform: translateX(-20px);
+
     }
 
     to {
@@ -39,13 +41,13 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #C00000;
+    color: darkblue;
 }
 
 .reg .form-label {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #C00000;
+    color: blue;
 }
 
 .reg .form-control {
@@ -53,9 +55,9 @@ body {
     height: 30px;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #C00000;
+    border: 1px solid darkblue;
     border-radius: 5px;
-    margin-bottom: 115px;
+    margin-bottom: 15px;
 }
 
 .reg .btn-primary {
@@ -64,26 +66,27 @@ body {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-    background-color: #007bff;
-    color: #fff;
+    color: cornflowerblue;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: backgroung-color 0.3s ease-in-out;
 }
 
 .reg .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: darkblue;
+
 }
 
-.reg .form-text1 #emailHelp {
+.reg .form-text1,
+#emailhelp {
     font-size: 14px;
-    color: #353746;
+    color: dodgerblue;
     margin-top: 5px;
 }
 
 .reg a {
-    color: #007bff;
+    color: deepskyblue;
     text-decoration: none;
     margin-left: 5px;
     font-size: 20px;
@@ -91,5 +94,5 @@ body {
 }
 
 .reg a:hover {
-    color: #0056b3;
+    color: indigo;
 }

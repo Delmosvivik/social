@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(["status" => "error", "message" => "Error: User not authenticated"]);
         exit;
     }
+
     if (($_SESSION['admin']) == 1) {
         $senderId = 0;
         $receiverId = $_POST['receiver_id'];

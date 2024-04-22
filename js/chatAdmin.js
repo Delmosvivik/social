@@ -1,5 +1,5 @@
 // Объявляем переменные для хранения выбранного пользователя и состояния видимости списка стикеров 
-let selectedUserId = null;
+let selectedUserId = 0;
 let stickerListVisible = false;
 // Функция для переключения видимости списка стикеров
 function toggleStickerList() {
@@ -79,6 +79,10 @@ function sendMessage() {
         return;
     }
     const messageText = messageInput.value;
+    if (!selectedUserId) {
+        selectedUserId = 0;
+    }
+    // Значение 0 будет означать отправку всем администраторам 
     // Отправляем AJAX-запрос на сервер для отправки сообщения
     fetch('sendMessage.php', {
         method: 'POST',
@@ -102,4 +106,5 @@ function sendMessage() {
 // При загрузке страницы выполняем функцию для получения списка пользователей
 document.addEventListener('DOMContentLoaded', () => {
     getUsers();
-});
+    loadMessages();
+}); 

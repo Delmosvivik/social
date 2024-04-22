@@ -10,13 +10,20 @@
     <link rel="stylesheet" href="../css/chat-styles.css">
 </head>
 
-<body> <?php include("../menu.php"); ?> <div id="chat-container">
-        <div id="user-list">
-            <ul id="all-users">
-                <!-- Здесь будут отображаться все пользователи -->
-                <!-- Пример: <li class="selected">Пользователь 1</li> -->
-            </ul>
-        </div>
+<body> <?php include("../menu.php");
+        ?>
+    <div id="chat-container">
+        <?php
+        // Проверяем, есть ли параметр сессии "admin" и равен ли он 1 
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
+            // Если да, то отображаем список пользователей 
+            echo '<div id="user-list">';
+            echo '<h3>Пользователи</h3>';
+            echo '<ul id="all-users">';
+            echo '</ul>';
+            echo '</div>';
+        }
+        ?>
         <div id="chat-messages">
             <h3>Выберите пользователя из списка, для начала общения 🥰</h3>
             <!-- Здесь будут отображаться сообщения чата -->
@@ -48,7 +55,7 @@
             <!-- Добавьте другие стикеры по аналогии -->
         </div> <button id="send-button" onclick="sendMessage()">Отправить</button>
     </div>
-    <script src="../js/chat.js"></script>
+    <script src="../js/chat-admin.js"></script>
 </body>
 
 </html>

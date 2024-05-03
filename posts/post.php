@@ -61,6 +61,50 @@ echo '<button type="submit" name="submit_comment">Отправить
 комментарий</button>';
 echo '</form>';
 echo '</div>';
-?>
+// Обработка отправки комментария
+if (isset($_POST['submit_comment'])) {
+    $author_name = isset($_SESSION['login']) ? $conn-
+    >real_escape_string($_SESSION['login']) : 'Anonymous';
+    $content = $conn->real_escape_string($_POST['content']);
+    $sql_comment = "INSERT INTO comments (post_id, author_name, content) VALUES
+    ('$post_id', '$author_name', '$content')";
+    // Обработка отправки комментария
+    if (isset($_POST['submit_comment'])) {
+    $author_name = isset($_SESSION['login']) ? $conn-
+    >real_escape_string($_SESSION['login']) : 'Anonymous';
+    $content = $conn->real_escape_string($_POST['content']);
+    $sql_comment = "INSERT INTO comments (post_id, author_name, content) VALUES
+    ('$post_id', '$author_name', '$content')";
+    if ($conn->query($sql_comment) === TRUE) {
+    // После успешного добавления комментария выполняем JavaScript для 
+    перезагрузки страницы
+    echo "<script>window.location.href = window.location.href;</script>";
+    exit; // Для предотвращения выполнения остального PHP кода после 
+    перенаправления
+    } else {
+    echo "<script>alert('Ошибка: " . $conn->error . "');</script>";
+    }
+    }
+    }
+    // Вывод комментариев
+    $sql_comments = "SELECT author_name, content, created_at FROM comments WHERE
+    post_id = $post_id ORDER BY created_at DESC";
+    $result_comments = $conn->query($sql_comments);
+    if ($result_comments->num_rows > 0) {
+    echo "<div class='comments-container'>";
+    echo "<h3>Комментарии:</h3>";
+    while($row = $result_comments->fetch_assoc()) {
+    echo "<div class='comment'>";
+    echo "<p><b>" . htmlspecialchars($row['author_name']) . "</b> (" . 
+    $row['created_at'] . ")</p>";
+    echo "<p>" . nl2br(htmlspecialchars($row['content'])) . "</p>";
+    echo "</div>";
+    }
+    echo "</div>";
+    } else {
+    echo "<p>Комментариев пока нет.</p>";
+    }
+    $conn->close();
+    ?>
 </body>
 </html>

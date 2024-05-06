@@ -16,6 +16,6 @@
         }
         ?>
         <li><a href="http://localhost/Social/posts/posts.php">Новости</a></li>
-        <li><a href="#">Игры</a></li>
+        <li><a href="http://localhost/Social/games/games.php">Игры</a></li>
     </ul>
 </nav>
